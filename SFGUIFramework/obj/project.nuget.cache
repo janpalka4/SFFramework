@@ -1,0 +1,27 @@
+{
+  "version": 2,
+  "dgSpecHash": "WC9Y6UzLoXA+nJsNAd3pf2FWpcqAVPrT57B2Mdh4Dd9L97FiYWa7R9f+Aa22Jsvg6XJp4Pfd76ywMwBlmyQ68Q==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\janpa\\Source\\repos\\SFGUIFramework\\SFGUIFramework\\SFGUIFramework.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\janpa\\.nuget\\packages\\freetype\\2.8.0.1\\freetype.2.8.0.1.nupkg.sha512",
+    "C:\\Users\\janpa\\.nuget\\packages\\freetype.redist\\2.8.0.1\\freetype.redist.2.8.0.1.nupkg.sha512",
+    "C:\\Users\\janpa\\.nuget\\packages\\freetypesharp\\1.1.3\\freetypesharp.1.1.3.nupkg.sha512",
+    "C:\\Users\\janpa\\.nuget\\packages\\microsoft.netcore.platforms\\5.0.0\\microsoft.netcore.platforms.5.0.0.nupkg.sha512",
+    "C:\\Users\\janpa\\.nuget\\packages\\opentk\\4.7.5\\opentk.4.7.5.nupkg.sha512",
+    "C:\\Users\\janpa\\.nuget\\packages\\opentk.compute\\4.7.5\\opentk.compute.4.7.5.nupkg.sha512",
+    "C:\\Users\\janpa\\.nuget\\packages\\opentk.core\\4.7.5\\opentk.core.4.7.5.nupkg.sha512",
+    "C:\\Users\\janpa\\.nuget\\packages\\opentk.graphics\\4.7.5\\opentk.graphics.4.7.5.nupkg.sha512",
+    "C:\\Users\\janpa\\.nuget\\packages\\opentk.input\\4.7.5\\opentk.input.4.7.5.nupkg.sha512",
+    "C:\\Users\\janpa\\.nuget\\packages\\opentk.mathematics\\4.7.5\\opentk.mathematics.4.7.5.nupkg.sha512",
+    "C:\\Users\\janpa\\.nuget\\packages\\opentk.openal\\4.7.5\\opentk.openal.4.7.5.nupkg.sha512",
+    "C:\\Users\\janpa\\.nuget\\packages\\opentk.redist.glfw\\3.3.8.30\\opentk.redist.glfw.3.3.8.30.nupkg.sha512",
+    "C:\\Users\\janpa\\.nuget\\packages\\opentk.windowing.common\\4.7.5\\opentk.windowing.common.4.7.5.nupkg.sha512",
+    "C:\\Users\\janpa\\.nuget\\packages\\opentk.windowing.desktop\\4.7.5\\opentk.windowing.desktop.4.7.5.nupkg.sha512",
+    "C:\\Users\\janpa\\.nuget\\packages\\opentk.windowing.graphicslibraryframework\\4.7.5\\opentk.windowing.graphicslibraryframework.4.7.5.nupkg.sha512",
+    "C:\\Users\\janpa\\.nuget\\packages\\sixlabors.imagesharp\\2.1.3\\sixlabors.imagesharp.2.1.3.nupkg.sha512",
+    "C:\\Users\\janpa\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\5.0.0\\system.runtime.compilerservices.unsafe.5.0.0.nupkg.sha512",
+    "C:\\Users\\janpa\\.nuget\\packages\\system.text.encoding.codepages\\5.0.0\\system.text.encoding.codepages.5.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,19 @@
+C:\Users\janpa\Source\repos\SFGUIFramework\SFGUIFramework\bin\Debug\net6.0\SFGUIFramework.deps.json
+C:\Users\janpa\Source\repos\SFGUIFramework\SFGUIFramework\bin\Debug\net6.0\SFGUIFramework.dll
+C:\Users\janpa\Source\repos\SFGUIFramework\SFGUIFramework\bin\Debug\net6.0\SFGUIFramework.pdb
+C:\Users\janpa\Source\repos\SFGUIFramework\SFGUIFramework\obj\Debug\net6.0\SFGUIFramework.csproj.AssemblyReference.cache
+C:\Users\janpa\Source\repos\SFGUIFramework\SFGUIFramework\obj\Debug\net6.0\SFGUIFramework.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\janpa\Source\repos\SFGUIFramework\SFGUIFramework\obj\Debug\net6.0\SFGUIFramework.AssemblyInfoInputs.cache
+C:\Users\janpa\Source\repos\SFGUIFramework\SFGUIFramework\obj\Debug\net6.0\SFGUIFramework.AssemblyInfo.cs
+C:\Users\janpa\Source\repos\SFGUIFramework\SFGUIFramework\obj\Debug\net6.0\SFGUIFramework.csproj.CoreCompileInputs.cache
+C:\Users\janpa\Source\repos\SFGUIFramework\SFGUIFramework\obj\Debug\net6.0\SFGUIFramework.dll
+C:\Users\janpa\Source\repos\SFGUIFramework\SFGUIFramework\obj\Debug\net6.0\refint\SFGUIFramework.dll
+C:\Users\janpa\Source\repos\SFGUIFramework\SFGUIFramework\obj\Debug\net6.0\SFGUIFramework.pdb
+C:\Users\janpa\Source\repos\SFGUIFramework\SFGUIFramework\obj\Debug\net6.0\ref\SFGUIFramework.dll
+C:\Users\janpa\Source\repos\SFGUIFramework\SFGUIFramework\bin\Debug\net6.0\SFGraphicsEngine.dll
+C:\Users\janpa\Source\repos\SFGUIFramework\SFGUIFramework\bin\Debug\net6.0\SFGraphicsEngine.pdb
+C:\Users\janpa\Source\repos\SFGUIFramework\SFGUIFramework\obj\Debug\net6.0\SFGUIFramework.csproj.CopyComplete
+C:\Users\janpa\Source\repos\SFGUIFramework\SFGUIFramework\bin\Debug\net6.0\Res\Fonts\Lucida Sans Regular.ttf
+C:\Users\janpa\Source\repos\SFGUIFramework\SFGUIFramework\bin\Debug\net6.0\Res\Fonts\ArialTh.ttf
+C:\Users\janpa\Source\repos\SFGUIFramework\SFGUIFramework\bin\Debug\net6.0\Res\Shaders\Font\FontShader.vert
+C:\Users\janpa\Source\repos\SFGUIFramework\SFGUIFramework\bin\Debug\net6.0\Res\Shaders\Font\FontShader.frag
