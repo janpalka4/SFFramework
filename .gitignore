@@ -1,1 +1,7 @@
 .vs
+TestApp/bin
+TestApp/obj
+SFGUIFramework/bin
+SFGUIFramework/obj
+SFGraphicsEngine/bin
+SFGraphicsEngine/obj
