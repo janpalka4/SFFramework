@@ -45,7 +45,7 @@ namespace SFGraphicsEngine.Core.Rendering.Fonts
                         x += Atlas.CharacterInfos['-'].Size.X;
                         continue;
                     }
-                    if (ch == '\n') { line -= FontSize; x = text.Position.X; continue; }
+                    if (ch == '\n') { line += FontSize; x = text.Position.X; continue; }
 
                     //CharObjects.Add(new CharObject() {Color = Color4.White,FontSize = FontSize,Offset=i,Character=ch});
 
