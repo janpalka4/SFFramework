@@ -1,0 +1,92 @@
+\hypertarget{class_s_f_graphics_engine_1_1_core_1_1_buffer_object}{}\doxysection{SFGraphics\+Engine.\+Core.\+Buffer\+Object\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Class Template Reference}
+\label{class_s_f_graphics_engine_1_1_core_1_1_buffer_object}\index{SFGraphicsEngine.Core.BufferObject$<$ T $>$@{SFGraphicsEngine.Core.BufferObject$<$ T $>$}}
+
+
+Inheritance diagram for SFGraphics\+Engine.\+Core.\+Buffer\+Object\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}\+:
+% FIG 0
+
+
+Collaboration diagram for SFGraphics\+Engine.\+Core.\+Buffer\+Object\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_s_f_graphics_engine_1_1_core_1_1_buffer_object_a7cdeb2cad42fbfbbfdb92869fcd89c4e}{Buffer\+Object}} (T\mbox{[}$\,$\mbox{]} data, Buffer\+Target target=Buffer\+Target.\+Array\+Buffer, Buffer\+Usage\+Hint usage\+Hint=Buffer\+Usage\+Hint.\+Static\+Draw)
+\item 
+void \mbox{\hyperlink{class_s_f_graphics_engine_1_1_core_1_1_buffer_object_a478154a814e146f9f2524287ad158b42}{Bind}} ()
+\item 
+void \mbox{\hyperlink{class_s_f_graphics_engine_1_1_core_1_1_buffer_object_a49f79fb7b242997b3e3cda9ca84f9a22}{Unbind}} ()
+\item 
+void \mbox{\hyperlink{class_s_f_graphics_engine_1_1_core_1_1_buffer_object_a80fdcd4752973899438c770f95297c44}{Append\+Data}} (T\mbox{[}$\,$\mbox{]} data)
+\item 
+void \mbox{\hyperlink{class_s_f_graphics_engine_1_1_core_1_1_buffer_object_a4969b265ed224bc7d59404fbfcd876b0}{Dispose}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_s_f_graphics_engine_1_1_core_1_1_buffer_object_af605906b58cd2223fa818ab49cea2631}{Id}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_s_f_graphics_engine_1_1_core_1_1_buffer_object_a91e9c4b6fa33eee84d29a545fc68a4de}{Length}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_s_f_graphics_engine_1_1_core_1_1_buffer_object_a7cdeb2cad42fbfbbfdb92869fcd89c4e}\label{class_s_f_graphics_engine_1_1_core_1_1_buffer_object_a7cdeb2cad42fbfbbfdb92869fcd89c4e}} 
+\index{SFGraphicsEngine.Core.BufferObject$<$ T $>$@{SFGraphicsEngine.Core.BufferObject$<$ T $>$}!BufferObject@{BufferObject}}
+\index{BufferObject@{BufferObject}!SFGraphicsEngine.Core.BufferObject$<$ T $>$@{SFGraphicsEngine.Core.BufferObject$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{BufferObject()}{BufferObject()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_s_f_graphics_engine_1_1_core_1_1_buffer_object}{SFGraphics\+Engine.\+Core.\+Buffer\+Object}}$<$ T $>$.\mbox{\hyperlink{class_s_f_graphics_engine_1_1_core_1_1_buffer_object}{Buffer\+Object}} (\begin{DoxyParamCaption}\item[{T\mbox{[}$\,$\mbox{]}}]{data,  }\item[{Buffer\+Target}]{target = {\ttfamily BufferTarget.ArrayBuffer},  }\item[{Buffer\+Usage\+Hint}]{usage\+Hint = {\ttfamily BufferUsageHint.StaticDraw} }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_s_f_graphics_engine_1_1_core_1_1_buffer_object_a80fdcd4752973899438c770f95297c44}\label{class_s_f_graphics_engine_1_1_core_1_1_buffer_object_a80fdcd4752973899438c770f95297c44}} 
+\index{SFGraphicsEngine.Core.BufferObject$<$ T $>$@{SFGraphicsEngine.Core.BufferObject$<$ T $>$}!AppendData@{AppendData}}
+\index{AppendData@{AppendData}!SFGraphicsEngine.Core.BufferObject$<$ T $>$@{SFGraphicsEngine.Core.BufferObject$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{AppendData()}{AppendData()}}
+{\footnotesize\ttfamily void \mbox{\hyperlink{class_s_f_graphics_engine_1_1_core_1_1_buffer_object}{SFGraphics\+Engine.\+Core.\+Buffer\+Object}}$<$ T $>$.Append\+Data (\begin{DoxyParamCaption}\item[{T\mbox{[}$\,$\mbox{]}}]{data }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_s_f_graphics_engine_1_1_core_1_1_buffer_object_a478154a814e146f9f2524287ad158b42}\label{class_s_f_graphics_engine_1_1_core_1_1_buffer_object_a478154a814e146f9f2524287ad158b42}} 
+\index{SFGraphicsEngine.Core.BufferObject$<$ T $>$@{SFGraphicsEngine.Core.BufferObject$<$ T $>$}!Bind@{Bind}}
+\index{Bind@{Bind}!SFGraphicsEngine.Core.BufferObject$<$ T $>$@{SFGraphicsEngine.Core.BufferObject$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Bind()}{Bind()}}
+{\footnotesize\ttfamily void \mbox{\hyperlink{class_s_f_graphics_engine_1_1_core_1_1_buffer_object}{SFGraphics\+Engine.\+Core.\+Buffer\+Object}}$<$ T $>$.Bind (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_s_f_graphics_engine_1_1_core_1_1_buffer_object_a4969b265ed224bc7d59404fbfcd876b0}\label{class_s_f_graphics_engine_1_1_core_1_1_buffer_object_a4969b265ed224bc7d59404fbfcd876b0}} 
+\index{SFGraphicsEngine.Core.BufferObject$<$ T $>$@{SFGraphicsEngine.Core.BufferObject$<$ T $>$}!Dispose@{Dispose}}
+\index{Dispose@{Dispose}!SFGraphicsEngine.Core.BufferObject$<$ T $>$@{SFGraphicsEngine.Core.BufferObject$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Dispose()}{Dispose()}}
+{\footnotesize\ttfamily void \mbox{\hyperlink{class_s_f_graphics_engine_1_1_core_1_1_buffer_object}{SFGraphics\+Engine.\+Core.\+Buffer\+Object}}$<$ T $>$.Dispose (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_s_f_graphics_engine_1_1_core_1_1_buffer_object_a49f79fb7b242997b3e3cda9ca84f9a22}\label{class_s_f_graphics_engine_1_1_core_1_1_buffer_object_a49f79fb7b242997b3e3cda9ca84f9a22}} 
+\index{SFGraphicsEngine.Core.BufferObject$<$ T $>$@{SFGraphicsEngine.Core.BufferObject$<$ T $>$}!Unbind@{Unbind}}
+\index{Unbind@{Unbind}!SFGraphicsEngine.Core.BufferObject$<$ T $>$@{SFGraphicsEngine.Core.BufferObject$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Unbind()}{Unbind()}}
+{\footnotesize\ttfamily void \mbox{\hyperlink{class_s_f_graphics_engine_1_1_core_1_1_buffer_object}{SFGraphics\+Engine.\+Core.\+Buffer\+Object}}$<$ T $>$.Unbind (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_s_f_graphics_engine_1_1_core_1_1_buffer_object_af605906b58cd2223fa818ab49cea2631}\label{class_s_f_graphics_engine_1_1_core_1_1_buffer_object_af605906b58cd2223fa818ab49cea2631}} 
+\index{SFGraphicsEngine.Core.BufferObject$<$ T $>$@{SFGraphicsEngine.Core.BufferObject$<$ T $>$}!Id@{Id}}
+\index{Id@{Id}!SFGraphicsEngine.Core.BufferObject$<$ T $>$@{SFGraphicsEngine.Core.BufferObject$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Id}{Id}}
+{\footnotesize\ttfamily int \mbox{\hyperlink{class_s_f_graphics_engine_1_1_core_1_1_buffer_object}{SFGraphics\+Engine.\+Core.\+Buffer\+Object}}$<$ T $>$.Id}
+
+
+
+\doxysubsection{Property Documentation}
+\mbox{\Hypertarget{class_s_f_graphics_engine_1_1_core_1_1_buffer_object_a91e9c4b6fa33eee84d29a545fc68a4de}\label{class_s_f_graphics_engine_1_1_core_1_1_buffer_object_a91e9c4b6fa33eee84d29a545fc68a4de}} 
+\index{SFGraphicsEngine.Core.BufferObject$<$ T $>$@{SFGraphicsEngine.Core.BufferObject$<$ T $>$}!Length@{Length}}
+\index{Length@{Length}!SFGraphicsEngine.Core.BufferObject$<$ T $>$@{SFGraphicsEngine.Core.BufferObject$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Length}{Length}}
+{\footnotesize\ttfamily int \mbox{\hyperlink{class_s_f_graphics_engine_1_1_core_1_1_buffer_object}{SFGraphics\+Engine.\+Core.\+Buffer\+Object}}$<$ T $>$.Length\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Core/\+Rendering/\mbox{\hyperlink{_buffer_object_8cs}{Buffer\+Object.\+cs}}\end{DoxyCompactItemize}

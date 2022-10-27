@@ -1,0 +1,10 @@
+digraph "SFGraphicsEngine.Core.Rendering.Fonts.CharAtlas"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  Node1 [label="SFGraphicsEngine.Core.Rendering.\lFonts.CharAtlas",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Texture of font characters"];
+  Node2 -> Node1 [dir="back",color="steelblue1",style="solid"];
+  Node2 [label="Texture",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$class_s_f_graphics_engine_1_1_core_1_1_rendering_1_1_imaging_1_1_texture.html",tooltip=" "];
+}
