@@ -10,6 +10,9 @@ using SixLabors.ImageSharp.Processing;
 
 namespace SFGraphicsEngine.Core.Rendering.Fonts
 {
+    /// <summary>
+    /// Texture of font characters
+    /// </summary>
     public class CharAtlas : Texture
     {
         const int chars = 128;
@@ -18,51 +21,73 @@ namespace SFGraphicsEngine.Core.Rendering.Fonts
         public CharacterInfo[] CharacterInfos { get; set; }
         public override int Id { get; set; }
 
-        private byte[] data { get; set; }
-
-        public CharAtlas(string font, int fontSize) : base(0)
+        /// <summary>
+        /// Generates new char atlas from font
+        /// </summary>
+        /// <param name="font">Path to font (.ttf)</param>
+        /// <param name="fontSize">Size of font to be generated</param>
+        /// <exception cref="Exception"></exception>
+        public CharAtlas(string font = "Res/Fonts/Lucida Sans Regular.ttf", int fontSize = 18) : base()
         {
+            CharacterInfos = new CharacterInfo[chars];
+
             FontSize = fontSize;
 
+            Character[] characters = loadAllCharacters(font);
+
+            int w, h;
+
+            byte[] data = GetPixelDataFromCharacters(characters, out w, out h);
+
+            InitTexture(data,w,h,1,PixelInternalFormat.CompressedRed,PixelFormat.Red);
+
+            LoadInfos(characters, w, h);
+            
+            
+            
+        }
+
+        private void LoadInfos(Character[] characters, int w, int h)
+        {
+            int x = 0;
+            for (int i = 0; i < characters.Length; i++)
+            {
+                CharacterInfos[i] = new CharacterInfo()
+                {
+                    AtlasPosition = new Vector2((float)x / (float)w, 0),
+                    AtlasSize = new Vector2(characters[i].Size.X / (float)w, 1),
+                    Bearing = characters[i].Bearing,
+                    Size = characters[i].Size
+                };
+                x += characters[i].Size.X;
+            }
+        }
+
+        private Character[] loadAllCharacters(string font)
+        {
             FreeTypeLibrary library = new FreeTypeLibrary();
 
             IntPtr face;
-            if (FT.FT_New_Face(library.Native, "Res/Fonts/Lucida Sans Regular.ttf", 0, out face) != FT_Error.FT_Err_Ok)
+            if (FT.FT_New_Face(library.Native, font, 0, out face) != FT_Error.FT_Err_Ok)
                 throw new Exception("Cant init face");
             FreeTypeFaceFacade f = new FreeTypeFaceFacade(library, face);
 
-            FT.FT_Set_Pixel_Sizes(face, 0, (uint)fontSize);
+            FT.FT_Set_Pixel_Sizes(face, 0, (uint)FontSize);
 
-            
+
             Character[] characters = new Character[chars];
             int x = 0;
             for (int i = 0; i < characters.Length; i++)
             {
                 characters[i] = loadChar((char)(i), face, f);
-                
+
                 x += characters[i].Size.X;
             }
-            int w = characters.Sum(x => x.Size.X);
-            int h = characters.Max(x => x.Size.Y);
-            x = 0;
-            data = new byte[w*h];
-            Image<L8> img = new Image<L8>(w,h);
-            for (int i = 0; i < characters.Length; i++) {
-                if (characters[i].Size.X > 0)
-                {
-                    Image<L8> img2 = Image<L8>.LoadPixelData<L8>(characters[i].data, characters[i].Size.X, characters[i].Size.Y);
-                    Point p = new Point(x, h - characters[i].Size.Y);
-                    img.Mutate(x => x.DrawImage(img2, p, 1f));
-                    x += characters[i].Size.X;
-                }
-            }
-            img.CopyPixelDataTo(data);
-            //img.SaveAsBmp(@"C:\Users\janpa\atlas.bmp");
-            InitTexture(characters);
 
             FT.FT_Done_Face(face);
             FT.FT_Done_FreeType(library.Native);
-            
+
+            return characters;
         }
 
         private Character loadChar(char ch, IntPtr face, FreeTypeFaceFacade facade)
@@ -81,50 +106,46 @@ namespace SFGraphicsEngine.Core.Rendering.Fonts
             };
         }
 
-        private void InitTexture(Character[] chars)
+        private byte[] GetPixelDataFromCharacters(Character[] characters, out int width, out int height)
         {
-            CharacterInfos = new CharacterInfo[chars.Length];
-
-            Id = GL.GenTexture();
-            GL.ActiveTexture(TextureUnit.Texture0);
-            GL.BindTexture(TextureTarget.Texture2D, Id);
-
-            GL.PixelStore(PixelStoreParameter.UnpackAlignment, 1);
-
-            int width = chars.Sum(x => x.Size.X);
-            int height = chars.Max(x => x.Size.Y);
-            byte[] pixels = new byte[width * height];
-            GL.TexImage2D(TextureTarget.Texture2D, 0, PixelInternalFormat.CompressedRed, width, height, 0, PixelFormat.Red, PixelType.UnsignedByte, data);
+            int w = characters.Sum(x => x.Size.X);
+            int h = characters.Max(x => x.Size.Y);
             int x = 0;
-            for (int i = 0; i < chars.Length; i++)
+            byte[] data = new byte[w * h];
+
+            Image<L8> img = new Image<L8>(w, h);
+            for (int i = 0; i < characters.Length; i++)
             {
-                CharacterInfos[i] = new CharacterInfo()
+                if (characters[i].Size.X > 0)
                 {
-                    AtlasPosition = new Vector2((float)x / (float)width,0),
-                    AtlasSize = new Vector2(chars[i].Size.X / (float)width, 1),
-                    Bearing = chars[i].Bearing,
-                    Size = chars[i].Size
-                };
-                x += chars[i].Size.X;
+                    Image<L8> img2 = Image<L8>.LoadPixelData<L8>(characters[i].data, characters[i].Size.X, characters[i].Size.Y);
+                    Point p = new Point(x, h - characters[i].Size.Y);
+                    img.Mutate(x => x.DrawImage(img2, p, 1f));
+                    x += characters[i].Size.X;
+                }
             }
+            img.CopyPixelDataTo(data);
 
-            GL.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureMinFilter, (int)TextureMinFilter.Linear);
-            GL.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureMagFilter, (int)TextureMagFilter.Linear);
+            width = w;
+            height = h;
 
-            GL.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureWrapS, (int)TextureWrapMode.ClampToEdge);
-            GL.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureWrapT, (int)TextureWrapMode.ClampToEdge);
-
-            GL.BindTexture(TextureTarget.Texture2D, 0);
+            return data;
         }
     }
 
-
+    /// <summary>
+    /// Character from font
+    /// </summary>
     public struct Character
     {
         public Vector2i Size;
         public Vector2i Bearing;
         public byte[] data;
     }
+
+    /// <summary>
+    /// Info about character in atlas
+    /// </summary>
     public struct CharacterInfo
     {
         public Vector2i Size;

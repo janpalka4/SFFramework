@@ -2,6 +2,9 @@
 
 namespace SFGraphicsEngine.Core.Rendering
 {
+    /// <summary>
+    /// Renderable object
+    /// </summary>
     public class VertexArrayObject : IDisposable
     {
         public int Id { get; set; }

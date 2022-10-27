@@ -3,6 +3,9 @@ using System.Reflection;
 
 namespace SFGraphicsEngine.Core.Rendering.Shading
 {
+    /// <summary>
+    /// Loads shaders from Assembly
+    /// </summary>
     public static class ShaderLoader
     {
         public static Shader LoadVertexShaderFromResources(string ShaderName)

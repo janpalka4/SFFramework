@@ -28,7 +28,7 @@ namespace SFGraphicsEngine.Core
 
         public void Unbind() => GL.BindBuffer(Target, 0);
 
-        public void UpdateData(T[] data)
+        public void AppendData(T[] data)
         {
             List<T> dat = new List<T>();
             dat.AddRange(Data);

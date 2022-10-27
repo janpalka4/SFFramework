@@ -15,83 +15,35 @@ namespace SFGraphicsEngine.Core.Rendering.Imaging
         {
             Image<Rgba32> img = Image.Load<Rgba32>(path);
 
-            InitTexture(img);
+            InitFromImage(img);
         }
 
-        public Texture(byte[] data,int width,int height)
+        public Texture(byte[] data, int width, int height) => InitTexture(data, width, height);
+        
+        public Texture()
         {
-            Image<L8> img = Image.LoadPixelData<L8>(data,width,height);
+        }
 
-            img.Mutate(x => x.Flip(FlipMode.Vertical));
+        public Texture(Image<Rgba32> image) => InitFromImage(image);
 
-            byte[] pd = new byte[width * height];
-            img.CopyPixelDataTo(pd);
+        protected void InitFromImage(Image<Rgba32> image)
+        {
+            byte[] data = new byte[image.Width * image.Height];
+            image.CopyPixelDataTo(data);
 
+            InitTexture(data, image.Width, image.Height);
+        }
+
+        protected void InitTexture(byte[] data,int width,int height, int? unpackAligment = null,  PixelInternalFormat format = PixelInternalFormat.Rgba, PixelFormat pixelFormat = PixelFormat.Rgba)
+        {
             Id = GL.GenTexture();
             GL.ActiveTexture(TextureUnit.Texture0);
             GL.BindTexture(TextureTarget.Texture2D, Id);
 
-            GL.PixelStore(PixelStoreParameter.UnpackAlignment, 1);
-            GL.TexImage2D(TextureTarget.Texture2D, 0, PixelInternalFormat.CompressedRed, width, height, 0, PixelFormat.Red, PixelType.UnsignedByte, pd);
+            if(unpackAligment.HasValue)
+            GL.PixelStore(PixelStoreParameter.UnpackAlignment, unpackAligment.Value);
 
-
-
-            GL.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureMinFilter, (int)TextureMinFilter.Nearest);
-            GL.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureMagFilter, (int)TextureMagFilter.Nearest);
-
-            GL.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureWrapS, (int)TextureWrapMode.Repeat);
-            GL.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureWrapT, (int)TextureWrapMode.Repeat);
-
-            GL.BindTexture(TextureTarget.Texture2D, 0);
-        }
-        public Texture(int id)
-        {
-            Id = id;
-        }
-
-        public Texture(IntPtr data,int width,int height)
-        {
-            byte[] dat = new byte[width * height];
-            Marshal.Copy(data,dat,0, dat.Length);
-
-            Image<L8> imgv = Image.LoadPixelData<L8>(dat,width,height);
-            imgv.Mutate(x => x.Flip(FlipMode.Vertical));
-
-            byte[] pd = new byte[width * height];
-            imgv.CopyPixelDataTo(pd);
-
-            Id = GL.GenTexture();
-            GL.ActiveTexture(TextureUnit.Texture0);
-            GL.BindTexture(TextureTarget.Texture2D, Id);
-
-            GL.PixelStore(PixelStoreParameter.UnpackAlignment, 1);
-            GL.TexImage2D(TextureTarget.Texture2D, 0, PixelInternalFormat.CompressedRed, width, height, 0, PixelFormat.Red, PixelType.UnsignedByte, pd);
-
-            
-
-            GL.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureMinFilter, (int)TextureMinFilter.Nearest);
-            GL.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureMagFilter, (int)TextureMagFilter.Nearest);
-
-            GL.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureWrapS, (int)TextureWrapMode.Repeat);
-            GL.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureWrapT, (int)TextureWrapMode.Repeat);
-
-            GL.BindTexture(TextureTarget.Texture2D, 0);
-        }
-
-        public Texture(Image<Rgba32> image) => InitTexture(image);
-
-        private void InitTexture(Image<Rgba32> original)
-        {
-            original.Mutate(x => x.Flip(FlipMode.Vertical));
-
-            byte[] data = new byte[original.Width * original.Height*4];
-            original.CopyPixelDataTo(data);
-
-            Id = GL.GenTexture();
-            GL.ActiveTexture(TextureUnit.Texture0);
-            GL.BindTexture(TextureTarget.Texture2D, Id);
-
-            GL.TexImage2D(TextureTarget.Texture2D,0,PixelInternalFormat.Rgba,original.Width,original.Height,0,PixelFormat.Rgba,PixelType.UnsignedByte,data);
+            GL.TexImage2D(TextureTarget.Texture2D,0,format,width,height,0,pixelFormat,PixelType.UnsignedByte,data);
 
             GL.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureMinFilter, (int)TextureMinFilter.Linear);
             GL.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureMagFilter, (int)TextureMagFilter.Linear);

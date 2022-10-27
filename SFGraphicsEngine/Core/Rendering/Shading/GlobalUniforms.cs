@@ -4,6 +4,9 @@ using OpenTK.Mathematics;
 
 namespace SFGraphicsEngine.Core.Rendering.Shading
 {
+    /// <summary>
+    /// Tempoary
+    /// </summary>
     public static class GlobalUniforms
     {
         public static Matrix4 Projection = Matrix4.CreateOrthographic(800, 600, .1f, 100f);
